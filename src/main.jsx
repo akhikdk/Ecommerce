@@ -6,6 +6,7 @@ import Routes from './Router';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    {/* test from clone */}
    <Routes/>
   </StrictMode>,
 );
