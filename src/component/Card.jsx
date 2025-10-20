@@ -4,7 +4,8 @@ function Card({ title, price, image }) {
   return (
     <div className="w-[260px] bg-white/30 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-5 m-4 transition-transform hover:scale-105 hover:shadow-2xl duration-300">
       
-      {/* Product Image */}
+      
+      
       <div className="w-full h-40 flex items-center justify-center mb-4">
         <img
           src={image}
@@ -13,15 +14,17 @@ function Card({ title, price, image }) {
         />
       </div>
 
-      {/* Product Title */}
+     
+     
       <h2 className="text-lg font-semibold text-gray-800 line-clamp-2 mb-2">
         {title}
       </h2>
 
-      {/* Price */}
-      <p className="text-xl font-bold text-blue-600 mb-4">${price}</p>
+     
+     
+      <p className="text-xl font-bold text-blue-600 mb-4">${price}</p>   
 
-      {/* Action Buttons */}
+    
       <div className="flex gap-2">
         <button className="flex-1 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors">
           View

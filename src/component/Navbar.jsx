@@ -6,7 +6,7 @@ function Navbar() {
       
      
       <div className="w-[20%]">
-        <h1 className="text-xl font-bold">Ecommerce</h1>
+        <h1 className="text-xl font-bold">WonderCart</h1>
       </div>
 
      

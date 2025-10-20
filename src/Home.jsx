@@ -13,8 +13,8 @@ function Home() {
       setProducts(data);
     } catch (error) {
       console.error("Error fetching products:", error);
-    }
-  };
+    } 
+  };0
 
   useEffect(() => {
     fetchStoreProducts();
