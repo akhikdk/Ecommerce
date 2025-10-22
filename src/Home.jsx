@@ -31,6 +31,7 @@ function Home() {
       <div className="flex flex-wrap justify-center gap-6 p-6">
         {products.map((item) => (
           <Card
+          id={item.id}
             key={item.id}
             title={item.title}
             price={item.price}
