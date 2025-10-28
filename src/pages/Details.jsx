@@ -8,7 +8,7 @@ function Details() {
     const {id}=useParams()
 
     const GetData=async()=>{
-        let res=await fetch(`https://fakestoreapi.com/products/${id}`)
+        let res=await fetch(`http://localhost:7070/${id}`)
         let data=await res.json()
         SetProduct(data)
     }

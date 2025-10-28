@@ -1,44 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
-function Card({id, title, price, image }) {
+
+function Card({ id, title, price, image, onDelete }) {
   return (
-    <div className="w-[260px] bg-white/30 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-5 m-4 transition-transform hover:scale-105 hover:shadow-2xl duration-300">
-      
-      
-      
-      <div className="w-full h-40 flex items-center justify-center mb-4">
-        <img
-          src={image}
-          alt={title}
-          className="h-full object-contain drop-shadow-md"
-        />
-      </div>
+    <div className="w-64 bg-white rounded-xl shadow-lg p-4 relative hover:shadow-2xl transition">
+      {/* Delete Button */}
+      <button
+        onClick={() => onDelete(id)}
+        className="absolute top-2 right-2 bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-red-700 transition"
+        title="Delete product"
+      >
+        ✕
+      </button>
 
-     
-     
-      <h2 className="text-lg font-semibold text-gray-800 line-clamp-2 mb-2">
-        {title}
-      </h2>
-
-     
-     
-      <p className="text-xl font-bold text-blue-600 mb-4">${price}</p>   
-
-    
-      <div className="flex gap-2">
-
-        <Link to={`/details/${id}`} className="flex-1 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors">
-        
-        VIEW
-        </Link>
-      
-        <button className="flex-1 bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition-colors ">
-          Add to Cart
-        </button>
-      </div>
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-40 object-cover rounded-md mb-3"
+      />
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <p className="text-gray-700 mb-2">Price: ${price}</p>
+      <p className="text-sm text-gray-400">ID: {id}</p>
     </div>
   );
 }
 
 export default Card;
-
