@@ -8,7 +8,7 @@ function Products() {
 
   const fetchProducts = async () => {
     try {
-      const res = await fetch("http://localhost:7070/api/products");
+      const res = await fetch("http://localhost:8000/api/products");
       const data = await res.json();
       setProducts(data);
     } catch (error) {
@@ -23,7 +23,7 @@ function Products() {
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`http://localhost:7070/api/products/${id}`, {
+      const res = await fetch(`http://localhost:8000/api/products/${id}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -62,11 +62,11 @@ function Products() {
         ) : (
           products.map((item) => (
             <Card
-              key={item.Id}
-              id={item.Id}
-              title={item.Title}
-              price={item.Price}
-              image={item.Image}
+              key={item._id}
+              id={item._id}
+              title={item.title}
+              price={item.price}
+              image={item.image}
               onDelete={handleDelete}
             />
           ))

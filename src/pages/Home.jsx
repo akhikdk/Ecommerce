@@ -3,7 +3,6 @@ import React from "react";
 function Home() {
   return (
     <div className="w-full min-h-screen flex flex-col bg-gray-50 font-sans">
-      {/* Navbar */}
       <nav className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white flex flex-wrap justify-between items-center px-8 py-4 shadow-lg">
         <div className="w-auto">
           <h1 className="text-3xl font-extrabold tracking-wide">WonderCart</h1>
@@ -29,15 +28,14 @@ function Home() {
         </ul>
       </nav>
 
-      {/* Hero Section */}
       <section className="flex flex-col md:flex-row justify-between items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20 px-8 md:px-16">
         <div className="md:w-1/2 space-y-6">
           <h2 className="text-5xl font-bold leading-tight">
             Shop the Latest <span className="text-yellow-300">Trends</span>
           </h2>
           <p className="text-lg text-gray-100 max-w-md">
-            Discover top-quality products, exclusive deals, and new arrivals — all in one
-            place. Elevate your shopping experience today.
+            Discover top-quality products, exclusive deals, and new arrivals —
+            all in one place. Elevate your shopping experience today.
           </p>
           <button className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl hover:scale-105 transition">
             Shop Now
@@ -53,7 +51,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Featured Products */}
       <section className="py-16 px-8 md:px-16 bg-white">
         <h3 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Featured <span className="text-blue-600">Products</span>
@@ -82,10 +79,11 @@ function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center py-6 mt-auto">
         <p className="text-sm md:text-base">
-          &copy; {new Date().getFullYear()} <span className="font-semibold">WonderCart</span>. All rights reserved.
+          &copy; {new Date().getFullYear()}{" "}
+          <span className="font-semibold">WonderCart</span>. All rights
+          reserved.
         </p>
       </footer>
     </div>

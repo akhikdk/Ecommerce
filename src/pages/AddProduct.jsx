@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 
 function AddProduct() {
   const [formData, setFormData] = useState({
-    Id: "",
-    Title: "",
-    Price: "",
-    Image: "",
+    id: "",
+     title: "",
+    price: "",
+    image: "",
   });
 
   const [message, setMessage] = useState("");
@@ -47,8 +47,8 @@ function AddProduct() {
 
       if (response.ok) {
         setMessage(data.message);
-        setProducts((prev) => [...prev, data.product]); // update instantly
-        setFormData({ Id: "", Title: "", Price: "", Image: "" });
+        setProducts((prev) => [...prev, data.product]);
+        setFormData({ id: "", title: "", price: "", image: "" });
       } else {
         setMessage(data.message);
       }
@@ -63,7 +63,7 @@ function AddProduct() {
       return;
 
     try {
-      const response = await fetch(`http://localhost:7070/api/products/${id}`, {
+      const response = await fetch(`http://localhost:8000/api/products/${id}`, {
         method: "DELETE",
       });
 
@@ -72,7 +72,7 @@ function AddProduct() {
       if (response.ok) {
         setMessage(data.message);
 
-        setProducts((prev) => prev.filter((p) => p.Id !== id));
+        setProducts((prev) => prev.filter((p) => p._id !== id));
       } else {
         setMessage(data.message);
       }
@@ -93,35 +93,35 @@ function AddProduct() {
         >
           <input
             type="text"
-            name="Id"
+            name="id"
             placeholder="Id"
-            value={formData.Id}
+            value={formData._id}
             onChange={handleChange}
             className="w-[80%] h-[3rem] border border-gray-400 rounded-lg py-2 px-3 mb-4"
           />
 
           <input
             type="text"
-            name="Title"
+            name="title"
             placeholder="Title"
-            value={formData.Title}
+            value={formData.title}
             onChange={handleChange}
             className="w-[80%] h-[3rem] border border-gray-400 rounded-lg py-2 px-3 mb-4"
           />
 
           <input
             type="text"
-            name="Price"
+            name="price"
             placeholder="Price"
-            value={formData.Price}
+            value={formData.price}
             onChange={handleChange}
             className="w-[80%] h-[3rem] border border-gray-400 rounded-lg py-2 px-3 mb-4"
           />
 
           <textarea
-            name="Image"
+            name="image"
             placeholder="Image URL"
-            value={formData.Image}
+            value={formData.image}
             onChange={handleChange}
             className="w-[80%] h-[6rem] border border-gray-400 rounded-xl py-2 px-3 resize-none mb-4"
           ></textarea>
@@ -150,13 +150,13 @@ function AddProduct() {
                 className="border rounded-lg p-4 shadow-sm relative"
               >
                 <img
-                  src={product.Image}
-                  alt={product.Title}
+                  src={product.image}
+                  alt={product.title}
                   className="w-full h-40 object-cover rounded-md mb-2"
                 />
-                <h3 className="font-semibold text-lg">{product.Title}</h3>
-                <p className="text-gray-600">Price: {product.Price}</p>
-                <p className="text-gray-400 text-sm mb-3">ID: {product.Id}</p>
+                <h3 className="font-semibold text-lg">{product.title}</h3>
+                <p className="text-gray-600">Price: {product.price}</p>
+                <p className="text-gray-400 text-sm mb-3">ID: {product._id}</p>
 
                 <button
                   onClick={() => handleDelete(product.Id)}
